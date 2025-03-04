@@ -1,17 +1,19 @@
+import * as v from "valibot";
+import { rssSchema } from "./schema";
+
 type BuildNoteOptions = {
 	channel: "Release" | "Beta" | "Nightly";
 };
 
-type BuildNoteResult = {
-	title: string;
-	lastBuildDate: string;
-};
-
 export const buildChannel = async (
 	options: BuildNoteOptions,
-): Promise<BuildNoteResult> => {
-	return {
+): Promise<v.InferOutput<typeof rssSchema>> => {
+	return v.parse(rssSchema, {
 		title: "Mozilla Firefox Release Notes",
-		lastBuildDate: new Date().toISOString(),
-	};
+		description: `Mozilla Firefox ${options.channel} Release Notes`,
+		link: "https://www.mozilla.org/en-US/firefox/notes/",
+		language: "en-US",
+		lastBuildDate: new Date(),
+		pubDate: new Date(),
+	} satisfies v.InferInput<typeof rssSchema>);
 };

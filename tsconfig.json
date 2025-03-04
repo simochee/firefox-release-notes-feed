@@ -1,3 +1,7 @@
 {
-	"extends": "@tsconfig/node22"
+	"extends": "@tsconfig/node22",
+	"compilerOptions": {
+		"module": "ESNext",
+		"moduleResolution": "bundler"
+	}
 }

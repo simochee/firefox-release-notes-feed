@@ -8,6 +8,7 @@ const builder = new XMLBuilder({
 	ignoreAttributes: false,
 	suppressEmptyNode: true,
 	suppressBooleanAttributes: false,
+	format: process.env.NODE_ENV === "development",
 });
 
 await Promise.all(
