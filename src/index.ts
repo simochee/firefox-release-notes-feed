@@ -18,6 +18,7 @@ await Promise.all(
 				"@_encoding": "UTF-8",
 			},
 			rss: {
+				"@_version": "2.0",
 				channel: await buildChannel({ channel }),
 			},
 		});
