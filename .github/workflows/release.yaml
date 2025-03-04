@@ -36,9 +36,6 @@ jobs:
       - name: Build
         run: pnpm run start
 
-      - name: Add CNAME
-        run: echo "firefox-release-notes.simochee.net" > dist/CNAME
-
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
