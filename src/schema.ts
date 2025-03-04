@@ -25,7 +25,12 @@ export const rssSchema = v.object({
 				title: v.optional(v.string()),
 				link: v.optional(v.pipe(v.string(), v.url())),
 				pubDate: v.optional(v.pipe(v.date(), v.transform(formatRFC822))),
-				guid: v.optional(v.string()),
+				guid: v.optional(
+					v.object({
+						"@_isPermaLink": v.string(),
+						"#text": v.string(),
+					}),
+				),
 				description: v.optional(v.string()),
 				content: v.optional(v.string()),
 			}),
