@@ -1,14 +1,24 @@
 {
-  "private": true,
-  "scripts": {
-    "watch": "tsx watch src/index.ts",
-    "start": "tsx src/index.ts"
-  },
-  "dependencies": {
-    "@tsconfig/node22": "^22.0.0",
-    "tsx": "^4.19.3"
-  },
-  "devDependencies": {
-    "@types/node": "^22.13.9"
-  }
+	"private": true,
+	"scripts": {
+		"postinstall": "lefthook install",
+		"start": "tsx src/index.ts",
+		"watch": "tsx watch src/index.ts"
+	},
+	"dependencies": {
+		"@tsconfig/node22": "^22.0.0",
+		"@types/node": "^22.13.9",
+		"tsx": "^4.19.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"lefthook": "^1.11.2",
+		"sort-package-json": "^2.15.1"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"@biomejs/biome",
+			"lefthook"
+		]
+	}
 }
