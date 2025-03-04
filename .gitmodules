@@ -1,0 +1,3 @@
+[submodule "release-notes"]
+	path = release-notes
+	url = git@github.com:mozilla/release-notes.git
