@@ -4,42 +4,11 @@ Provides Firefox release notes as an RSS feed.
 
 ## RSS Feeds
 
-### Release Channel
-
-The stable, polished version of Firefox, ready for everyday use. Get the latest official updates and feature enhancements.
-
-- [Download](https://www.mozilla.org/ja/firefox/)
-- [Release Notes](https://www.mozilla.org/en-US/firefox/releases/)
-
-```
-https://firefox-release-notes.simochee.net/feed.xml
-```
-
-```
-https://firefox-release-notes.simochee.net/feed/release.xml
-```
-
-### Beta Channel
-
-Test about-to-be-released features in the most stable pre-release build.
-
-- [Download](https://www.mozilla.org/en-US/firefox/channel/desktop/)
-- [Release Notes](https://www.mozilla.org/en-US/firefox/beta/notes/)
-
-```
-https://firefox-release-notes.simochee.net/feed/beta.xml
-```
-
-### Nightly Channel
-
-Get a sneak peek at our next generation web browser, and help us make it the best browser it can be: try Firefox Nightly.
-
-- [Download](https://www.mozilla.org/en-US/firefox/channel/desktop/)
-- [Release Notes](https://www.mozilla.org/en-US/firefox/nightly/notes/)
-
-```
-https://firefox-release-notes.simochee.net/feed/nightly.xml
-```
+|     | Firefox | Firefox for Android | Firefox for iOS |
+| --- | --- | --- | --- |
+| Release | [release.xml](https://firefox-release-notes.simochee.net/release.xml) | [android/release.xml](https://firefox-release-notes.simochee.net/android/release.xml) | [ios/release.xml](https://firefox-release-notes.simochee.net/ios/release.xml) |
+| Beta | [beta.xml](https://firefox-release-notes.simochee.net/beta.xml) | [android/beta.xml](https://firefox-release-notes.simochee.net/android/beta.xml) | - |
+| Nightly | [nightly.xml](https://firefox-release-notes.simochee.net/nightly.xml) | - | - |
 
 ## Usage
 

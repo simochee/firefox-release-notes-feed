@@ -2,13 +2,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { XMLBuilder } from "fast-xml-parser";
 import { type BuildNoteOptions, buildChannel } from "./builder";
 
-const FIREFOX_CHANNELS = [
-	"Release",
-	"ESR",
-	"Aurora",
-	"Beta",
-	"Nightly",
-] as const;
+const FIREFOX_CHANNELS = ["Release", "Beta", "Nightly"] as const;
 const FIREFOX_PRODUCTS: Omit<BuildNoteOptions, "channel">[] = [
 	{
 		product: "Firefox",
@@ -27,12 +21,6 @@ const FIREFOX_PRODUCTS: Omit<BuildNoteOptions, "channel">[] = [
 		dir: "./ios/",
 		releaseNoteUrl:
 			"https://www.mozilla.org/en-US/firefox/ios/{version}/releasenotes/",
-	},
-	{
-		product: "Thunderbird",
-		dir: "./thunderbird/",
-		releaseNoteUrl:
-			"https://www.thunderbird.net/en-US/thunderbird/{version}/releasenotes/",
 	},
 ] as const;
 
@@ -58,14 +46,10 @@ await Promise.all(
 			});
 
 			const dist = new URL("../dist/", import.meta.url);
-			const feed = new URL(`./feed/${product.dir}/`, dist);
+			const feed = new URL(product.dir, dist);
 
 			await mkdir(feed, { recursive: true });
 			await writeFile(new URL(`${channel.toLowerCase()}.xml`, feed), rss);
-
-			if (product.product === "Firefox" && channel === "Release") {
-				await writeFile(new URL("feed.xml", dist), rss);
-			}
 		}),
 	),
 );
