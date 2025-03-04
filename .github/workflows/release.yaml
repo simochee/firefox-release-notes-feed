@@ -34,7 +34,7 @@ jobs:
         run: pnpm install --frozen-lockfile --prod
 
       - name: Build
-        run: pnpm run start
+        run: pnpm run build
 
       - uses: actions/upload-pages-artifact@v3
         with:

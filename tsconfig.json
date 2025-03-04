@@ -1,7 +1,12 @@
 {
-	"extends": "@tsconfig/node22",
 	"compilerOptions": {
+		"target": "ESNext",
 		"module": "ESNext",
-		"moduleResolution": "bundler"
+		"moduleResolution": "Bundler",
+		"esModuleInterop": true,
+		"strict": true,
+		"lib": ["ESNext"],
+		"jsx": "react-jsx",
+		"jsxImportSource": "hono/jsx"
 	}
 }
