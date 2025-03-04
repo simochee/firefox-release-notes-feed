@@ -12,7 +12,9 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: 'true'
-        
+
+      - run: echo "$(cat package.json)" | jq 'del(.scripts.postinstall)' > package.json
+      
       - uses: pnpm/action-setup@v4
         with:
           version: 10
@@ -22,8 +24,6 @@ jobs:
         with:
           node-version-file: .tool-versions
           cache: 'pnpm'
-
-      - run: pnpm config set enable-pre-post-scripts false
 
       - run: pnpm install --frozen-lockfile --prod
 
