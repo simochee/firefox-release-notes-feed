@@ -17,6 +17,26 @@ export const FeedList = async () => {
 			<body>
 				<main className="container">
 					<h1>Firefox Release Notes Feeds</h1>
+					<a
+						href="https://github.com/simochee/firefox-release-notes-feed"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img
+							src="https://img.shields.io/badge/Repository-simochee%2Ffirefox--release--notes--feed-blue?logo=github&logoColor=fff"
+							alt="simochee/firefox-release-notes-feed"
+						/>
+					</a>
+					<a
+						href="https://github.com/simochee/firefox-release-notes-feed/actions/workflows/release.yaml"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img
+							src="https://img.shields.io/github/actions/workflow/status/simochee/firefox-release-notes-feed/release.yaml?logo=github-actions&logoColor=fff&label=Build%20and%20Release"
+							alt="GitHub Workflow Status"
+						/>
+					</a>
 					{FIREFOX_CONFIG.map(({ product, channels }) => (
 						<Fragment key={product}>
 							<h2>{product}</h2>
