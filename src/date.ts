@@ -6,3 +6,9 @@ export const formatRFC822 = (date: Date) => {
 		locale: enUS,
 	});
 };
+
+export const formatDate = (date: Date) => {
+	return format(date, "LLLL d, yyyy", {
+		locale: enUS,
+	});
+};

@@ -5,15 +5,15 @@
 		"build": "tsx src/index.ts",
 		"dev": "concurrently \"wrangler pages dev dist\" \"pnpm run watch\"",
 		"postinstall": "lefthook install",
-		"watch": "NODE_ENV=development tsx watch src/index.ts"
+		"watch": "tsx watch src/index.ts"
 	},
 	"dependencies": {
 		"@types/node": "^22.13.9",
 		"date-fns": "^4.1.0",
+		"fast-glob": "^3.3.3",
 		"fast-xml-parser": "^5.0.8",
 		"hono": "^4.7.2",
-		"tsx": "^4.19.3",
-		"valibot": "1.0.0-rc.3"
+		"tsx": "^4.19.3"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",
