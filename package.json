@@ -2,10 +2,10 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"build": "tsx src/index.ts",
+		"build": "tsx src/index.tsx",
 		"dev": "concurrently \"wrangler pages dev dist\" \"pnpm run watch\"",
 		"postinstall": "lefthook install",
-		"watch": "tsx watch src/index.ts"
+		"watch": "tsx watch src/index.tsx"
 	},
 	"dependencies": {
 		"@types/node": "^22.13.9",

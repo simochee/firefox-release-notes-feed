@@ -2,10 +2,13 @@ import fs from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import { Hono } from "hono";
 import { toSSG } from "hono/ssg";
+import { FeedList } from "./FeedList";
 import { FIREFOX_CONFIG } from "./config";
 import { buildRSS } from "./rss";
 
 const app = new Hono();
+
+app.get("/", (c) => c.html(<FeedList />));
 
 for (const { product, channels } of FIREFOX_CONFIG) {
 	for (const channel of channels) {
