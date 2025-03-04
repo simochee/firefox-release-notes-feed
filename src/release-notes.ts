@@ -27,12 +27,17 @@ export const buildReleaseNotes = async (
 	config: ConfigChannel,
 ) => {
 	const releaseNotes = await releaseNotesPromise;
-	const items = releaseNotes.filter(
-		(note) =>
-			note.is_public &&
-			note.product === product &&
-			note.channel === config.channel,
-	);
+	const items = releaseNotes
+		.filter(
+			(note) =>
+				note.is_public &&
+				note.product === product &&
+				note.channel === config.channel,
+		)
+		.sort(
+			(a, b) =>
+				new Date(b.release_date).getTime() - new Date(a.release_date).getTime(),
+		);
 
 	const latestReleaseDate = Math.max(
 		...items.map((item) => new Date(item.release_date).getTime()),
