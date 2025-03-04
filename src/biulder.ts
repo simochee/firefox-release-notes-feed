@@ -4,6 +4,7 @@ type BuildNoteOptions = {
 
 type BuildNoteResult = {
 	title: string;
+	lastBuildDate: string;
 };
 
 export const buildChannel = async (
@@ -11,5 +12,6 @@ export const buildChannel = async (
 ): Promise<BuildNoteResult> => {
 	return {
 		title: "Mozilla Firefox Release Notes",
+		lastBuildDate: new Date().toISOString(),
 	};
 };
