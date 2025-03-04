@@ -12,7 +12,11 @@ The stable, polished version of Firefox, ready for everyday use. Get the latest 
 - [Release Notes](https://www.mozilla.org/en-US/firefox/releases/)
 
 ```
-https://firefox-release-notes.simochee.net/feed
+https://firefox-release-notes.simochee.net/feed.xml
+```
+
+```
+https://firefox-release-notes.simochee.net/feed/release.xml
 ```
 
 ### Beta Channel
@@ -23,7 +27,7 @@ Test about-to-be-released features in the most stable pre-release build.
 - [Release Notes](https://www.mozilla.org/en-US/firefox/beta/notes/)
 
 ```
-https://firefox-release-notes.simochee.net/feed/beta
+https://firefox-release-notes.simochee.net/feed/beta.xml
 ```
 
 ### Nightly Channel
@@ -34,7 +38,7 @@ Get a sneak peek at our next generation web browser, and help us make it the bes
 - [Release Notes](https://www.mozilla.org/en-US/firefox/nightly/notes/)
 
 ```
-https://firefox-release-notes.simochee.net/feed/nightly
+https://firefox-release-notes.simochee.net/feed/nightly.xml
 ```
 
 ## Usage
