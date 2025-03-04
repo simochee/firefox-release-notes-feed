@@ -13,7 +13,9 @@ jobs:
         with:
           submodules: 'true'
 
-      - run: echo "$(cat package.json)" | jq 'del(.scripts.postinstall)' > package.json
+      - run: |
+          content=$(cat package.json)
+          echo "$content" | jq 'del(.scripts.postinstall)' > package.json
       
       - uses: pnpm/action-setup@v4
         with:
