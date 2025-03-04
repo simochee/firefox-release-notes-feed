@@ -8,4 +8,27 @@ export const rssSchema = v.object({
 	language: v.optional(v.string()),
 	lastBuildDate: v.optional(v.pipe(v.date(), v.transform(formatRFC822))),
 	pubDate: v.optional(v.pipe(v.date(), v.transform(formatRFC822))),
+	ttl: v.optional(v.number()),
+	image: v.optional(
+		v.object({
+			url: v.pipe(v.string(), v.url()),
+			title: v.string(),
+			link: v.pipe(v.string(), v.url()),
+			width: v.optional(v.number()),
+			height: v.optional(v.number()),
+			description: v.optional(v.string()),
+		}),
+	),
+	item: v.optional(
+		v.array(
+			v.object({
+				title: v.optional(v.string()),
+				link: v.optional(v.pipe(v.string(), v.url())),
+				pubDate: v.optional(v.pipe(v.date(), v.transform(formatRFC822))),
+				guid: v.optional(v.string()),
+				description: v.optional(v.string()),
+				content: v.optional(v.string()),
+			}),
+		),
+	),
 });

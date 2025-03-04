@@ -1,8 +1,12 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import { XMLBuilder } from "fast-xml-parser";
-import { buildChannel } from "./biulder.js";
+import { type BuildNoteOptions, buildChannel } from "./builder";
 
-const RELEASE_CHANNELS = ["Release", "Beta", "Nightly"] as const;
+const BUILD_OPTIONS = [
+	{ channel: "Release" },
+	{ channel: "Beta" },
+	{ channel: "Nightly" },
+] satisfies BuildNoteOptions[];
 
 const builder = new XMLBuilder({
 	ignoreAttributes: false,
@@ -12,7 +16,7 @@ const builder = new XMLBuilder({
 });
 
 await Promise.all(
-	RELEASE_CHANNELS.map(async (channel) => {
+	BUILD_OPTIONS.map(async (option) => {
 		const rss = builder.build({
 			"?xml": {
 				"@_version": "1.0",
@@ -20,7 +24,7 @@ await Promise.all(
 			},
 			rss: {
 				"@_version": "2.0",
-				channel: await buildChannel({ channel }),
+				channel: await buildChannel(option),
 			},
 		});
 
@@ -28,9 +32,9 @@ await Promise.all(
 		const feed = new URL("./feed/", dist);
 
 		await mkdir(feed, { recursive: true });
-		await writeFile(new URL(`${channel.toLowerCase()}.xml`, feed), rss);
+		await writeFile(new URL(`${option.channel.toLowerCase()}.xml`, feed), rss);
 
-		if (channel === "Release") {
+		if (option.channel === "Release") {
 			await writeFile(new URL("feed.xml", dist), rss);
 		}
 	}),

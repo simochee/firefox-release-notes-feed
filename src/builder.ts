@@ -1,7 +1,7 @@
 import * as v from "valibot";
 import { rssSchema } from "./schema";
 
-type BuildNoteOptions = {
+export type BuildNoteOptions = {
 	channel: "Release" | "Beta" | "Nightly";
 };
 
@@ -15,5 +15,6 @@ export const buildChannel = async (
 		language: "en-US",
 		lastBuildDate: new Date(),
 		pubDate: new Date(),
+		ttl: 3 * 60 * 60 * 1000,
 	} satisfies v.InferInput<typeof rssSchema>);
 };
