@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "watch": "tsx watch src/index.ts",
+    "start": "tsx src/index.ts"
+  },
+  "dependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "tsx": "^4.19.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9"
+  }
+}
