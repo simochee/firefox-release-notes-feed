@@ -7,6 +7,7 @@ const builder = new XMLBuilder({
 	ignoreAttributes: false,
 	suppressEmptyNode: true,
 	suppressBooleanAttributes: false,
+	format: true,
 });
 
 export const buildRSS = async (
