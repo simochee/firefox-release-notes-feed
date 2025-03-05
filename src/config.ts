@@ -12,6 +12,7 @@ export type ConfigChannel = {
 	file: `${string}.xml`;
 	link: string;
 	versionLink: string;
+	thumbnail: string;
 };
 
 export const FIREFOX_CONFIG: Config[] = [
@@ -26,6 +27,8 @@ export const FIREFOX_CONFIG: Config[] = [
 				link: "https://www.mozilla.org/en-US/firefox/notes/",
 				versionLink:
 					"https://www.mozilla.org/en-US/firefox/{version}/releasenotes/",
+				thumbnail:
+					"https://firefox-release-notes.simochee.net/thumbnails/firefox-browser.png",
 			},
 			{
 				channel: "Beta",
@@ -34,7 +37,9 @@ export const FIREFOX_CONFIG: Config[] = [
 				file: "beta.xml",
 				link: "https://www.mozilla.org/en-US/firefox/beta/notes/",
 				versionLink:
-					"https://www.mozilla.org/en-US/firefox/beta/{version}/releasenotes/",
+					"https://www.mozilla.org/en-US/firefox/{version}/releasenotes/",
+				thumbnail:
+					"https://firefox-release-notes.simochee.net/thumbnails/firefox-beta.png",
 			},
 			{
 				channel: "Nightly",
@@ -43,7 +48,9 @@ export const FIREFOX_CONFIG: Config[] = [
 				file: "nightly.xml",
 				link: "https://www.mozilla.org/en-US/firefox/nightly/notes/",
 				versionLink:
-					"https://www.mozilla.org/en-US/firefox/nightly/{version}/releasenotes/",
+					"https://www.mozilla.org/en-US/firefox/{version}/releasenotes/",
+				thumbnail:
+					"https://firefox-release-notes.simochee.net/thumbnails/firefox-nightly.png",
 			},
 		],
 	},
@@ -58,6 +65,8 @@ export const FIREFOX_CONFIG: Config[] = [
 				link: "https://www.mozilla.org/en-US/firefox/android/notes/",
 				versionLink:
 					"https://www.mozilla.org/en-US/firefox/android/{version}/releasenotes/",
+				thumbnail:
+					"https://firefox-release-notes.simochee.net/thumbnails/firefox-android.png",
 			},
 		],
 	},
@@ -72,6 +81,8 @@ export const FIREFOX_CONFIG: Config[] = [
 				link: "https://www.mozilla.org/en-US/firefox/ios/notes/",
 				versionLink:
 					"https://www.mozilla.org/en-US/firefox/ios/{version}/releasenotes/",
+				thumbnail:
+					"https://firefox-release-notes.simochee.net/thumbnails/firefox-ios.png",
 			},
 		],
 	},

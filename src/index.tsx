@@ -1,8 +1,6 @@
-import fs from "node:fs/promises";
-import { fileURLToPath } from "node:url";
 import { Hono } from "hono";
-import { toSSG } from "hono/ssg";
 import { FeedList } from "./FeedList";
+import { build } from "./build";
 import { FIREFOX_CONFIG } from "./config";
 import { buildRSS } from "./rss";
 
@@ -22,9 +20,4 @@ for (const { product, channels } of FIREFOX_CONFIG) {
 	}
 }
 
-toSSG(app, fs, {
-	dir: fileURLToPath(new URL("../dist", import.meta.url)),
-	afterResponseHook(res) {
-		return res.status === 200 ? res : false;
-	},
-});
+await build(app);
