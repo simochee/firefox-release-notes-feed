@@ -2,7 +2,7 @@ import { readFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import glob from "fast-glob";
 import type { ConfigChannel } from "./config";
-import { formatDate } from "./date";
+import { formatDate, formatRFC822 } from "./date";
 const RELEASE_NOTES_DIR = new URL(
 	"../release-notes/releases/",
 	import.meta.url,
@@ -52,7 +52,7 @@ export const buildReleaseNotes = async (
 			"@_isPermaLink": "false",
 			"#text": note.slug,
 		},
-		pubDate: new Date(note.release_date),
+		pubDate: formatRFC822(new Date(note.release_date)),
 		"media:thumbnail": {
 			"@_url": config.thumbnail,
 			"@_width": "960",
