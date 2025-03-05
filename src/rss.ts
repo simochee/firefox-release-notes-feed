@@ -20,10 +20,10 @@ export const buildRSS = async (
 		"?xml": {
 			"@_version": "1.0",
 			"@_encoding": "UTF-8",
-			"@_xmlns:media": "http://search.yahoo.com/mrss/",
 		},
 		rss: {
 			"@_version": "2.0",
+			"@_xmlns:media": "http://search.yahoo.com/mrss/",
 			channel: {
 				title: channel.title,
 				link: channel.link,
