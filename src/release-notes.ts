@@ -53,6 +53,11 @@ export const buildReleaseNotes = async (
 			"#text": note.slug,
 		},
 		pubDate: new Date(note.release_date),
+		"media:thumbnail": {
+			"@_url": config.thumbnail,
+			"@_width": "960",
+			"@_height": "540",
+		},
 	}));
 
 	return { pubDate, item };

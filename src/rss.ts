@@ -28,13 +28,6 @@ export const buildRSS = async (
 				description: channel.description,
 				lastBuildDate: formatRFC822(new Date()),
 				pubDate: formatRFC822(pubDate),
-				image: {
-					url: channel.thumbnail,
-					title: channel.title,
-					link: channel.link,
-					width: 960,
-					height: 540,
-				},
 				language: "en-US",
 				generator: "Hono",
 				ttl: 3 * 60 * 60 * 1000,
