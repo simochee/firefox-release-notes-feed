@@ -7,9 +7,6 @@ export const build = async (app: Hono) => {
 	const distDir = new URL("../dist", import.meta.url);
 	const publicDir = new URL("../public", import.meta.url);
 
-	// dist/ をクリーンアップ
-	await fs.rm(distDir, { recursive: true });
-
 	// public/ を dist/ にコピー
 	await fs.cp(publicDir, distDir, { recursive: true });
 
