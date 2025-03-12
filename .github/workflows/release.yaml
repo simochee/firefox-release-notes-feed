@@ -16,7 +16,7 @@ jobs:
           submodules: 'true'
 
       - name: update submodule
-        run: git submodule update
+        run: git submodule update --remote
 
       - name: Remove postinstall script
         run: |
