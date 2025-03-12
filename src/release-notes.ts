@@ -37,7 +37,8 @@ export const buildReleaseNotes = async (
 		.sort(
 			(a, b) =>
 				new Date(b.release_date).getTime() - new Date(a.release_date).getTime(),
-		);
+		)
+		.slice(0, 20);
 
 	const latestReleaseDate = Math.max(
 		...items.map((item) => new Date(item.release_date).getTime()),

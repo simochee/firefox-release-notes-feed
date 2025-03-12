@@ -8,24 +8,26 @@
 		"watch": "tsx watch src/index.tsx"
 	},
 	"dependencies": {
-		"@types/node": "^22.13.9",
+		"@types/node": "^24.0.7",
 		"date-fns": "^4.1.0",
 		"fast-glob": "^3.3.3",
-		"fast-xml-parser": "^5.0.8",
-		"hono": "^4.7.2",
-		"tsx": "^4.19.3"
+		"fast-xml-parser": "^5.2.5",
+		"hono": "^4.8.3",
+		"tsx": "^4.20.3"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "^1.9.4",
-		"concurrently": "^9.1.2",
-		"lefthook": "^1.11.2",
-		"sort-package-json": "^2.15.1",
-		"wrangler": "^3.112.0"
+		"@biomejs/biome": "^2.0.6",
+		"concurrently": "^9.2.0",
+		"lefthook": "^1.11.14",
+		"sort-package-json": "^3.3.1",
+		"wrangler": "^4.22.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
 			"@biomejs/biome",
-			"lefthook"
+			"esbuild",
+			"lefthook",
+			"workerd"
 		]
 	}
 }
