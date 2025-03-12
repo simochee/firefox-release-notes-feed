@@ -15,6 +15,9 @@ jobs:
         with:
           submodules: 'true'
 
+      - name: update submodule
+        run: git submodule update
+
       - name: Remove postinstall script
         run: |
           content=$(cat package.json)
